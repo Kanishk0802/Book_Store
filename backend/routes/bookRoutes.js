@@ -27,15 +27,15 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const books = await Book.find({});
-
+    console.log(books);
     return res.status(200).json({
       count: books.length,
       data: books,
     });
-  } catch (error) {
+   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
-  }
+    }
 });
 
 router.get("/:id", async (req, res) => {
@@ -43,7 +43,6 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
 
     const book = await Book.findById(id);
-    console.log(book, "Books");
     return res.status(200).json(book);
   } catch (error) {
     console.log(error.message, "in /books get method");
