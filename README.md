@@ -9,3 +9,12 @@ Tech stacks used :
 2. Backend- NodeJs, ExpressJS
 3. Database - MongoDB
 4. API tested on - Postman
+
+How to run the project -
+
+cd backend/ 
+npm run dev
+
+open another terminal
+cd frontend/
+npm run dev
